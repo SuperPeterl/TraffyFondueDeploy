@@ -28,7 +28,7 @@ def process_text(text):
 
     text = word_tokenize(text, engine="newmm")
     print(text,end= " = ")
-    text = [token_to_id.get(i, "<unk>") for i in text]
+    text = [token_to_id.get(i, 1) for i in text]
     print(text)
     return text
 
