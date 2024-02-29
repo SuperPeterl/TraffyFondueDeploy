@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from flask import Flask, request, jsonify,render_template
 import numpy as np
 import onnxruntime
