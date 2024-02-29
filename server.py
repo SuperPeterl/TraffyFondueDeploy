@@ -17,7 +17,7 @@ model_dir = 'model'
 model = onnxruntime.InferenceSession(os.path.join(model_dir, "Model.onnx"))
 
 init_token_id = 1  #เริ่มต้นประโยค
-pad_token_id = 0  #pad_id ตอนเทรนจะเติมเข้าไปกรณีบางประโยคสั้นกว่าประโยคอื่น
+pad_token_id = 2  #pad_id ตอนเทรนจะเติมเข้าไปกรณีบางประโยคสั้นกว่าประโยคอื่น
 unk_token_id= 1 # กรณีไม่พบคำศัพท์จะแทนด้วย 2 นี้
 
 def read_json(fname, encoding='utf-8'):
