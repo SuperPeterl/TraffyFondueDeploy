@@ -16,10 +16,6 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 model_dir = 'model'
 model = onnxruntime.InferenceSession(os.path.join(model_dir, "Model.onnx"))
 
-init_token_id = 1  #เริ่มต้นประโยค
-pad_token_id = 2  #pad_id ตอนเทรนจะเติมเข้าไปกรณีบางประโยคสั้นกว่าประโยคอื่น
-unk_token_id= 1 # กรณีไม่พบคำศัพท์จะแทนด้วย 2 นี้
-
 def read_json(fname, encoding='utf-8'):
     with open(fname, encoding=encoding) as f:
         data = json.load(f)
@@ -28,27 +24,10 @@ def read_json(fname, encoding='utf-8'):
 token_to_id = read_json(os.path.join(model_dir, 'token2idx.json'))
 ids_to_labs = read_json(os.path.join(model_dir, 'idx2lab.json'))
 
-def tokens_to_ids(tokens):
-    if len(tokens) == 0:
-        return [0]
-    
-    out_id = [init_token_id]
-    for w in tokens:
-        if w in token_to_id.keys():
-            out_id.append(token_to_id[w])
-        else:
-            out_id.append(unk_token_id)  # unknown word
-    
-    return out_id
-
-def thai_clean_text(text):
-    st = ""
-    # Add more text cleaning code here, such as removing emojis
-    text = text.replace("\n", " ")
-    for w in word_tokenize(text):
-        st = st + w + " "
-
-    return re.sub(' +', ' ', st).strip()
+def process_text(text):
+    text = word_tokenize(text, engine="newmm")
+    text = [token_to_id[i] for i in text if i in token_to_id else 1]
+    return text
 
 @app.route('/')
 def home():
@@ -58,9 +37,9 @@ def home():
 @app.route("/predict", methods=["POST"])
 def predict():
     input_data = request.json
-    clean_text = thai_clean_text(input_data["text"])
-    token_ids = tokens_to_ids(clean_text.split(' '))
-    input_data = np.array([token_ids])
+    text = input_data["text"]
+    text = process_text(text)
+    input_data = np.array([text])
 
     input_name = model.get_inputs()[0].name
     output_name = model.get_outputs()[0].name
