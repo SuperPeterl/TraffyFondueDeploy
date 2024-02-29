@@ -10,14 +10,12 @@
 .result{
     font-size: 24px;
 }
-
+body{
+    background-image: url("{{ url_for('static', filename=wd) }}");
+    background-color: rgba(255, 255, 255, 0.5);
+}
 .form-control{
     height: 500px;
-    background-image: url("{{ url_for('static', filename=wd) }}");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
     background-color: rgba(255, 255, 255, 0.5);
 }
 </style>
