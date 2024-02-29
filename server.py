@@ -6,6 +6,9 @@ import json
 from pythainlp.tokenize import word_tokenize
 import re
 import os
+import emoji
+from attacut import tokenize
+
 
 app = Flask(__name__,static_folder='static')
 
@@ -25,12 +28,12 @@ token_to_id = read_json(os.path.join(model_dir, 'token2idx.json'))
 ids_to_labs = read_json(os.path.join(model_dir, 'idx2lab.json'))
 #print(token_to_id)
 def process_text(text):
-
-    text = word_tokenize(text, engine="newmm")
+    text = emoji.demojize(text)
+    text = tokenize(text)
     print(text,end= " = ")
-    text = [token_to_id.get(i, 1) for i in text]
+    seq = [token_to_id.get(i, 1) for i in text]
     print(text)
-    return text
+    return seq
 
 @app.route('/')
 def home():
