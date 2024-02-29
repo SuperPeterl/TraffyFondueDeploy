@@ -35,7 +35,7 @@ def process_text(text):
 @app.route('/')
 def home():
     wd = "wd.jpg"
-    return render_template('./index.html'wd = wd)
+    return render_template('./index.html',wd = wd)
 
 
 @app.route("/predict", methods=["POST"])
