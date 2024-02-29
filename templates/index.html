@@ -49,9 +49,7 @@
           data: JSON.stringify({ text: inputText }), // Pass input value as data to API
           dataType: 'json',
           success: function(response) {
-            //("Data submitted successfully!"); // Show success message
             console.log(response);
-           // $("#input-text").val(""); // Clear input field
             $("#result").html("<div class='"+response.prediction+"''>"+response.prediction+"</div>");
           },
           error: function(jqXHR, textStatus, errorThrown) {
