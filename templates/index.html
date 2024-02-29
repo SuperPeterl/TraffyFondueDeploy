@@ -13,6 +13,7 @@
 
 .form-control{
     height: 500px;
+    background-image: url("{{ url_for('static', wd') }}");
 }
 </style>
 
@@ -28,9 +29,6 @@
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
-  </div>
-  <div>
-    <img src="{{ url_for('static', filename=wd) }}" alt="Word Cloud">
   </div>
   <!-- Bootstrap JavaScript -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
