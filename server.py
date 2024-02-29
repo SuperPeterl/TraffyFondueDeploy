@@ -23,10 +23,10 @@ def read_json(fname, encoding='utf-8'):
 
 token_to_id = read_json(os.path.join(model_dir, 'token2idx.json'))
 ids_to_labs = read_json(os.path.join(model_dir, 'idx2lab.json'))
-
+#print(token_to_id)
 def process_text(text):
     text = word_tokenize(text, engine="newmm")
-    text = [token_to_id[i] for i in text if i in token_to_id else 1]
+    text = [token_to_id.get(i, "<unk>") for i in text]
     return text
 
 @app.route('/')
