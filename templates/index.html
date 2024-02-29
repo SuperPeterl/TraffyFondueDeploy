@@ -13,7 +13,7 @@
 
 .form-control{
     height: 500px;
-    background-image: url("{{ url_for('static', wd') }}");
+    background-image: "{{ url_for('static', filename=wd) }}"
 }
 </style>
 
