@@ -45,7 +45,7 @@
         $.ajax({
           type: "POST",
           contentType: "application/json",
-          url: "http://localhost:3000/predict", // Replace with your API endpoint URL
+          url: "http://20.219.16.119:3000/predict", // Replace with your API endpoint URL
           data: JSON.stringify({ text: inputText }), // Pass input value as data to API
           dataType: 'json',
           success: function(response) {
