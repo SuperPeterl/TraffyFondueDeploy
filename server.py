@@ -7,7 +7,7 @@ from pythainlp.tokenize import word_tokenize
 import re
 import os
 
-app = Flask(__name__)
+app = Flask(__name__,static_folder='static')
 
 origins = ["*"]
 
@@ -34,7 +34,8 @@ def process_text(text):
 
 @app.route('/')
 def home():
-    return render_template('./index.html')
+    wd = "wd.jpg"
+    return render_template('./index.html'wd = wd)
 
 
 @app.route("/predict", methods=["POST"])
