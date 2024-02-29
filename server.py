@@ -25,8 +25,11 @@ token_to_id = read_json(os.path.join(model_dir, 'token2idx.json'))
 ids_to_labs = read_json(os.path.join(model_dir, 'idx2lab.json'))
 #print(token_to_id)
 def process_text(text):
+
     text = word_tokenize(text, engine="newmm")
+    print(text,end= " = ")
     text = [token_to_id.get(i, "<unk>") for i in text]
+    print(text)
     return text
 
 @app.route('/')
