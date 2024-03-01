@@ -12,6 +12,7 @@
 }
 body{
     background-image: url("{{ url_for('static', filename=wd) }}");
+     background-image: url('https://static.thairath.co.th/media/dFQROr7oWzulq5Fa5LJGNkhVAMEBfIqmqrng8tDYlWr1Kp0TNKB5noWTsPmtYy4LelI.jpg');
             
             /* Set background properties */
             background-size: cover; /* Cover the entire container */
@@ -25,36 +26,22 @@ body{
             font-size: 24px;
             font-family: Arial, sans-serif;
 }
-
 .form-control{
     height: 500px;
-    padding-bottom: 50px;
-    background-color: rgba(255, 255, 255, 1);
-    resize: none;
-    font-size: 20px;
+    background-color: rgba(65, 187, 103, 0.85);
 }
-.btn-primary {
-    
-    width: 200px;
-    margin: auto;
-    display: block;
-    border-radius: 10px; /* Add some curvature to the button */
-    font-size: 20px; /* Increase font size */}
 .x {
-    background-color: rgba(255, 255, 255);
-    border-radius: 20px;
-    padding: 20px;
+    background-color: rgba(197, 12, 12, 0.99);
 }
-
 </style>
 
 </head>
 <body>
-  <div class="container mt-5 ">
+  <div class="container mt-5">
   <div class = "x">
   <h1>Traffy Fondue Model</h1>
-    <form id="myForm "class="pb-4">
-      <div class="mb-3">
+    <form id="myForm">
+      <div class="mb-3 mt-5">
         <label for="input-text" class="form-label">Enter some text:</label>
         <textarea type="text" class="form-control" id="input-text" placeholder="Type here..."> </textarea>
         <div class="result" id="result"></div>
