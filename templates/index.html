@@ -57,9 +57,7 @@ body{
       <div class="mb-3">
         <label for="input-text" class="form-label">Enter some text:</label>
         <textarea type="text" class="form-control" id="input-text" placeholder="Type here..."> </textarea>
-        <div class="result" id="result">
-
-        </div>
+        <div class="result" id="result"></div>
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
@@ -71,6 +69,7 @@ body{
   <script src="https://code.jquery.com/jquery-3.6.4.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <script>
+    console.log("Script loaded");
     $(document).ready(function() {
       $("#myForm").submit(function(event) {
         console.log("Form submitted");
