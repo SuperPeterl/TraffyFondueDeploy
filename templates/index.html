@@ -69,10 +69,8 @@ body{
   <script src="https://code.jquery.com/jquery-3.6.4.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <script>
-    console.log("Script loaded");
     $(document).ready(function() {
       $("#myForm").submit(function(event) {
-        console.log("Form submitted");
         event.preventDefault(); // Prevent form from submitting normally
         var inputText = $("#input-text").val(); // Get input value
         $.ajax({
