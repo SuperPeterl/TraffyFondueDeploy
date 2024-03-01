@@ -9,7 +9,7 @@
 <style>
 body{
     /* Background image */
-    background-image: url('https://static.thairath.co.th/media/dFQROr7oWzulq5Fa5LJGNkhVAMEBfIqmqrng8tDYlWr1Kp0TNKB5noWTsPmtYy4LelI.jpg');
+    background-image: url("{{ url_for('static', filename=wd) }}");
     background-size: cover; /* Cover the entire container */
     background-position: center; /* Center the image horizontally and vertically */
     background-repeat: no-repeat; /* Do not repeat the image */
@@ -24,7 +24,7 @@ body{
 .form-control{
     /* Set height and background color */
     height: 500px;
-    background-color: rgba(65, 187, 103, 0.85);
+    background-color: rgba(70, 71, 70, 0.85);
     
     /* Add curvature to the container */
     border-radius: 20px;
