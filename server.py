@@ -7,7 +7,7 @@ from pythainlp.tokenize import word_tokenize
 import re
 import os
 import emoji
-from attacut import tokenize
+#from attacut import tokenize
 
 
 app = Flask(__name__,static_folder='static')
@@ -29,7 +29,7 @@ ids_to_labs = read_json(os.path.join(model_dir, 'idx2lab.json'))
 #print(token_to_id)
 def process_text(text):
     text = emoji.demojize(text)
-    text = tokenize(text)
+    text = word_tokenize(text)
     print(text,end= " = ")
     seq = [token_to_id.get(i, 1) for i in text]
     print(text)
