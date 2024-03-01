@@ -12,30 +12,56 @@
 }
 body{
     background-image: url("{{ url_for('static', filename=wd) }}");
+            
+            /* Set background properties */
+            background-size: cover; /* Cover the entire container */
+            background-position: center; /* Center the image horizontally and vertically */
+            background-repeat: no-repeat; 
+            width: 100vw; 
+            height: 100vh; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            font-family: Arial, sans-serif;
 }
+
 .form-control{
     height: 500px;
-    background-color: rgba(255, 255, 255, 0.85);
+    padding-bottom: 50px;
+    background-color: rgba(255, 255, 255, 1);
+    resize: none;
+    font-size: 20px;
 }
+.btn-primary {
+    
+    width: 200px;
+    margin: auto;
+    display: block;
+    border-radius: 10px; /* Add some curvature to the button */
+    font-size: 20px; /* Increase font size */}
 .x {
-    background-color: rgba(255, 255, 255, 0.99);
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+    padding: 20px;
 }
+
 </style>
 
 </head>
 <body>
-  <div class="container mt-5">
+  <div class="container mt-5 ">
   <div class = "x">
   <h1>Traffy Fondue Model</h1>
-    <form id="myForm">
-      <div class="mb-3 mt-5">
+    <form id="myForm "class="pb-4">
+      <div class="mb-3">
         <label for="input-text" class="form-label">Enter some text:</label>
         <textarea type="text" class="form-control" id="input-text" placeholder="Type here..."> </textarea>
         <div class="result" id="result"></div>
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
-  </div class = "x">
+  </div>
   </div>
   <!-- Bootstrap JavaScript -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
