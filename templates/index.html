@@ -7,31 +7,40 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 <style>
-.result{
-    font-size: 24px;
-}
 body{
-    background-image: url("{{ url_for('static', filename=wd) }}");
-     background-image: url('https://static.thairath.co.th/media/dFQROr7oWzulq5Fa5LJGNkhVAMEBfIqmqrng8tDYlWr1Kp0TNKB5noWTsPmtYy4LelI.jpg');
-            
-            /* Set background properties */
-            background-size: cover; /* Cover the entire container */
-            background-position: center; /* Center the image horizontally and vertically */
-            background-repeat: no-repeat; 
-            width: 100vw; 
-            height: 100vh; 
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 24px;
-            font-family: Arial, sans-serif;
+    /* Background image */
+    background-image: url('https://static.thairath.co.th/media/dFQROr7oWzulq5Fa5LJGNkhVAMEBfIqmqrng8tDYlWr1Kp0TNKB5noWTsPmtYy4LelI.jpg');
+    background-size: cover; /* Cover the entire container */
+    background-position: center; /* Center the image horizontally and vertically */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    
+    /* Center the content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-family: Arial, sans-serif;
 }
 .form-control{
+    /* Set height and background color */
     height: 500px;
     background-color: rgba(65, 187, 103, 0.85);
+    
+    /* Add curvature to the container */
+    border-radius: 20px;
+}
+.btn-primary {
+    /* Increase button size and center it */
+    width: 200px;
+    margin: auto;
+    display: block;
+    border-radius: 10px; /* Add some curvature to the button */
+    font-size: 20px; /* Increase font size */
 }
 .x {
-    background-color: rgba(197, 12, 12, 0.99);
+    background-color: rgba(236, 236, 236, 0.99);
+    padding: 20px; /* Add some padding to the container */
+    border-radius: 20px; /* Add curvature to the container */
 }
 </style>
 
